@@ -1,0 +1,14 @@
+package sec2;
+
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class ReceiveThread extends Thread{
+	//동기화 컬랙션 : 여러 사용자가 현재 목록을 공유하고 있어야 한다.
+	static List<PrintWriter> list = Collections.synchronizedList(new ArrayList<PrintWriter>()); //static 공유데이터 	//Collections.synchronizedList(list) => 동기화
+	
+	Socket socket = null;
+	
+}

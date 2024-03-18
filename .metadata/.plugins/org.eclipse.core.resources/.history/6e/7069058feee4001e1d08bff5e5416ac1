@@ -1,0 +1,14 @@
+package sec2;
+
+public class MultiClient {
+
+	public void start() {
+		
+	}
+	public static void main(String[] args) {
+		 MultiClient client = new  MultiClient();
+		 client.start();
+
+	}
+
+}

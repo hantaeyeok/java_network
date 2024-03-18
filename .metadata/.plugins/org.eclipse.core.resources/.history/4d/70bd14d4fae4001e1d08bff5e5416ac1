@@ -1,0 +1,85 @@
+package sec1;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+class LoginGUI extends JFrame implements ActionListener, KeyListener{
+	JPanel port_log = new JPanel();
+	
+	JLabel port_label_user = new JLabel("유저 입력");
+	JTextField port_num_user = new JTextField(20);
+	
+	JLabel port_label_port = new JLabel("포트 입력");
+	JTextField port_num_port = new JTextField("####");
+	
+	JLabel port_label_adr = new JLabel("주소 입력");
+	JTextField port_num_adr = new JTextField("###.###.###.###");
+	
+	JButton port_btn = new JButton("접속!");
+	
+	public LoginGUI() {
+		setTitle("로그인 화면");
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(300,260);
+		setVisible(true);
+		setResizable(false);
+		port_btn.addActionListener(this);
+		port_num_user.addKeyListener(this);
+		port_num_port.addKeyListener(this);
+		port_num_adr.addKeyListener(this);
+		
+		port_log.add(port_label_user);
+		port_log.add(port_num_user);
+		
+		port_log.add(port_label_port);
+		port_log.add(port_num_port);
+		
+		port_log.add(port_label_adr);
+		port_log.add(port_num_adr);
+		add(port_log);
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
+
+public class GUIClient {
+
+	public static void main(String[] args) {
+		new LoginGUI();
+
+	}
+
+}
