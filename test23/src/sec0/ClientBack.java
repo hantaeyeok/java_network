@@ -1,5 +1,6 @@
 package sec0;
 
+import java.awt.TextArea;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -38,15 +39,18 @@ public class ClientBack extends Thread {
 			while (in != null) { 
 				Message = in.readUTF();
 				if (Message.contains("+++닉네임의시작+++")) { 
+					TextArea userListTextArea = chatgui.getUserListTextArea();
 					chatgui.UserList.setText(null);
 					NickNameList.add(Message.substring(12));
 					chatgui.AppendUserList(NickNameList);
 				} else if (Message.contains("님이 입장하셨습니다.\n")) {
+					TextArea userListTextArea = chatgui.getUserListTextArea();
 					NickNameList.clear();
 					chatgui.UserList.setText(null);
 					chatgui.AppendMessage(Message);
 				} else if (Message.contains("님이 퇴장하셨습니다.\n")) {
 					NickNameList.clear();
+					TextArea userListTextArea = chatgui.getUserListTextArea();
 					chatgui.UserList.setText(null);
 					chatgui.AppendMessage(Message);
 				} else {
@@ -67,4 +71,79 @@ public class ClientBack extends Thread {
 			e.printStackTrace();
 		}
 	}
+
+	public String getNickName() {
+		return NickName;
+	}
+
+	public void setNickName(String nickName) {
+		NickName = nickName;
+	}
+
+	public String getIPAddress() {
+		return IPAddress;
+	}
+
+	public void setIPAddress(String iPAddress) {
+		IPAddress = iPAddress;
+	}
+
+	public int getPort() {
+		return Port;
+	}
+
+	public void setPort(int port) {
+		Port = port;
+	}
+
+	public Socket getSocket() {
+		return socket;
+	}
+
+	public void setSocket(Socket socket) {
+		this.socket = socket;
+	}
+
+	public String getMessage() {
+		return Message;
+	}
+
+	public void setMessage(String message) {
+		Message = message;
+	}
+
+	public DataInputStream getIn() {
+		return in;
+	}
+
+	public void setIn(DataInputStream in) {
+		this.in = in;
+	}
+
+	public DataOutputStream getOut() {
+		return out;
+	}
+
+	public void setOut(DataOutputStream out) {
+		this.out = out;
+	}
+
+	public ChatClientGUI getChatgui() {
+		return chatgui;
+	}
+
+	public void setChatgui(ChatClientGUI chatgui) {
+		this.chatgui = chatgui;
+	}
+
+	public List<String> getNickNameList() {
+		return NickNameList;
+	}
+
+	public void setNickNameList(List<String> nickNameList) {
+		NickNameList = nickNameList;
+	}
+	
+	
+	
 }
