@@ -65,7 +65,7 @@
 	
 %>
 <div>
-	<a href="text09.jsp?msg=테스트해보기">테스트 09로 이동</a>
+	<a href="test09.jsp?msg=테스트해보기">테스트 09로 이동</a>
 </div>
 
 </body>
