@@ -8,8 +8,8 @@ public class Client {
 		PrintWriter pw = null;
 		Socket socket = null;
 		try {
-			socket = new Socket("192.168.0.1", 8080);
-			if(socket == null) {
+			socket = new Socket("192.168.0.1", 8080); //서버의 아이피 주소를 사용하지 않음 
+			if(socket == null) {						//!=
 				System.out.println("[Client]");
 				System.out.println("서버와 연결 성공!");
 				br = new BufferedReader(new InputStreamReader(socket.getInputStream()));

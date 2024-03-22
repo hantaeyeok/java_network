@@ -15,9 +15,9 @@ public class Application {
 			
 			PreparedStatement st = coon.prepareStatement(query);
 			
-			ResultSet rs = st.executeUpdate();
+			ResultSet rs = st.executeQuery();
 			
-			while(rs) {
+			while(rs.next()) {
 				System.out.println(rs.getString("empId")+"/"+rs.getString("empName"));
 			}
 			

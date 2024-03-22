@@ -9,7 +9,7 @@ public class Client {
 		Socket socket = null;
 		int port = 3000;
 		try {
-			socket = new Socket(port);
+			socket = new Socket(port);	//서버의 ip주소가 누락
 			if(socket != null) {
 				System.out.println("[Client]");
 				System.out.println("서버와 연결 성공!");

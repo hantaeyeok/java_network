@@ -7,10 +7,10 @@ public class Client {
 		BufferedReader br = null;
 		PrintWriter pw = null;
 		Socket socket = null;
-		int port = 8000;
+		int port = 8000;	//8888로바꾸고
 		try {
 			socket = new Socket("localhost", port);
-			if(socket == null) {
+			if(socket == null) {	//!=로 바꿔야함
 				System.out.println("[Client]");
 				System.out.println("서버와 연결 성공!");
 				br = new BufferedReader(new InputStreamReader(socket.getInputStream()));

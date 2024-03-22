@@ -30,4 +30,6 @@ public class Server {
 [클라이언트용 프로그래밍 코드]
 코드는 Test4-2.png
 
+오류 1
+
  */
